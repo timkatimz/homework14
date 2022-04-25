@@ -4,14 +4,11 @@ import sqlite3
 def get_cast_list(actor_1, actor_2):
     with sqlite3.connect('netflix.db') as con:
         cur = con.cursor()
-        query = f"""
-        SELECT "cast"
-        FROM netflix
-        WHERE "cast" LIKE '%{actor_1}%' 
-        AND "cast" LIKE '%{actor_2}%'
-        """
-        cur.execute(query)
-        data = cur.fetchall()
+        data = cur.execute('SELECT "cast" '
+                           'FROM netflix '
+                           'WHERE "cast" LIKE "actor_1"=:actor_1 AND "cast" LIKE "actor_2"=:actor_2',
+                           {"actor_1": actor_1,
+                            "actor_2": actor_2}).fetchall()
 
         all_actors = []
         for actors in data:
