@@ -17,7 +17,7 @@ def get_movie_by_genre(genre):
         for movie in data:
             movies = {
                 "title": movie[0],
-                "description": movie[1]
+                "description": movie[1].strip()
             }
             movies_list.append(movies)
         return movies_list

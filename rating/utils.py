@@ -21,7 +21,7 @@ def get_movie_by_rating(rating):
             movie = {
                 "title": movies[0],
                 "rating": movies[1],
-                "description": movies[2]
+                "description": movies[2].strip()
             }
             movies_list.append(movie)
 

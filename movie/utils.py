@@ -19,7 +19,7 @@ def get_movie_by_name(title):
             "country": res[0][1],
             "release_year": res[0][2],
             "genre": res[0][3],
-            "description": res[0][4]
+            "description": res[0][4].strip()
         }]
         return movie
 

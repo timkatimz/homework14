@@ -8,5 +8,6 @@ app.register_blueprint(movie)
 app.register_blueprint(rating)
 app.register_blueprint(genre)
 
+
 if __name__ == "__main__":
     app.run()
