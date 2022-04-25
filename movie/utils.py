@@ -1,7 +1,6 @@
 import sqlite3
 
 
-
 def get_movie_by_name(title):
     with sqlite3.connect('netflix.db') as con:
         cur = con.cursor()
